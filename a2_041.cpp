@@ -11,5 +11,4 @@ int main() {
     cout << oct << n << endl;
     cout << hex << uppercase << n << endl;
     return 0;
-
 }
