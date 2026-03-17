@@ -17,7 +17,7 @@ void removeItem(string name, int qty) {
         warehouse.erase(name);
     } else {
         warehouse[name] -= qty;
-        if (warehouse.[name] == 0) {
+        if (warehouse[name] == 0) {
             warehouse.erase(name);
         }
     }
@@ -69,6 +69,6 @@ int main() {
         cout << output.front() << "\n";
         output.pop();
     }
-    
+
     return 0;
 }
