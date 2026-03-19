@@ -12,30 +12,34 @@ void add(string name, int qty) {
 }
 
 void removeItem(string name, int qty) {
+    if (warehouse.find(name) == warehouse.end()) {
+        output.push("Not enough stock for " + name);
+        return;
+    }
     if (warehouse[name] <= qty) {
         output.push("Not enough stock for " + name);
         warehouse.erase(name);
     } else {
         warehouse[name] -= qty;
-        if (warehouse[name] == 0) {
+        if (warehouse[name] == 0)
             warehouse.erase(name);
-        }
     }
 }
 
 void check() {
     bool found = false;
-    for (auto & item : warehouse) {
+    for (auto& item : warehouse) {
         if (item.second < 5) {
             output.push(item.first);
+            found = true;
         }
     }
-    if (!found) {
+    if (!found)
         output.push("All stocks are sufficient");
-    }
 }
 
 void report() {
+    
     for (auto & item : warehouse) {
         output.push(item.first + ": " + to_string(item.second));
     }
