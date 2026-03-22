@@ -9,5 +9,6 @@ int main() {
     int m;
     cin >> m;
     int method = solve(m);
+    cout << method;
     return 0;
 }
