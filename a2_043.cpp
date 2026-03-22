@@ -43,10 +43,11 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) {
-        if (i < 0) cout << " ";
+        if (i > 0) cout << " ";
         cout << cave[i];
     }
     cout << "\n";
 
     return 0;
+    
 }
