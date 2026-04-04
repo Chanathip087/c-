@@ -1,22 +1,18 @@
 #include <iostream>
-#include <vector>
+#include <stack>
 using namespace std;
-int sumarray(vector <int> a) {
-    int sum = 0;
-    for (int x : a) {
-        sum += x;
-    }
-    return sum;
-}
 int main() {
+    stack <int> s;
     int n;
-    vector <int> a;
     cin >> n;
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
-        a.push_back(x);
+        s.push(x);
     }
-    cout << sumarray(a) << endl;
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
     return 0;
 }
