@@ -1,18 +1,22 @@
 #include <iostream>
-#include <stack>
+#include <set>
 using namespace std;
 int main() {
-    stack <int> s;
+    set<int> s;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
-        s.push(x);
+        s.insert(x);
     }
-    while (!s.empty()) {
-        cout << s.top() << " ";
-        s.pop();
+    for (auto x : s) {
+        if (s.count(x) > 0) {
+            cout << x << '\n';
+        }else {
+            cout << "none\n";
+        }
     }
+
     return 0;
 }
