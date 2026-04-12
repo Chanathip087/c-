@@ -12,9 +12,11 @@ int main() {
         cin >> x;
         a.push_back(x);
     }
-    sort(a.begin(), a.end());
+
+    sort(a.begin(), a.end(), greater<int>());
     int sum = 0;
-    for (int i = 0; i <= k; i++) {
+    
+    for (int i = 0; i < k; i++) {
         sum += a[i];
     }
     cout << sum << endl;
