@@ -4,10 +4,17 @@ using namespace std;
 int main() {
     string s;
     getline(cin, s);
-    int n = s.size();  
+    int n = s.size();
+
+    string filtered = "";
+    for (char c : s) {
+        if (isalpha(c))  
+        filtered += tolower(c);
+   }
+ 
     bool isPalindrome = true;
-    for (int i = 0; i < n / 2; i++) {
-        if (tolower(s[i]) != tolower(s[n - 1 - i])) {
+    for (int i = 0; i < filtered.size() / 2; i++) {
+        if (tolower(filtered[i]) != tolower(filtered[filtered.size() - 1 - i])) {
             isPalindrome = false;
             break;
         }
