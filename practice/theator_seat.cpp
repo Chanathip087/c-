@@ -32,7 +32,7 @@ int main() {
             a[i] = v;
         }
         else if (type == 2) {
-            
+            int L, R;
             cin >> L >> R;
 
             int max_sum = -2e9; 
